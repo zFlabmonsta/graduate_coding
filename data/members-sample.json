@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "firstName": "Shannon",
+    "lastName": "Robertson",
+    "address": "3 Kennedy Elbow\nHancockfurt, SA, 2898",
+    "active": false
+  },
+  {
+    "id": 1,
+    "firstName": "Christopher",
+    "lastName": "Becker",
+    "address": "Unit 57\n 3 Rachel Broadway\nKimberlytown, SA, 2674",
+    "active": true
+  },
+  {
+    "id": 2,
+    "firstName": "Steven",
+    "lastName": "Acevedo",
+    "address": "Suite 036\n 7 Tyler Avenue\nBrownland, QLD, 2627",
+    "active": true
+  }
+]

@@ -10,9 +10,15 @@ With that in mind, we are more interested in seeing how you think and go about s
 
 ## The Problem
 
-We have some raw data about our customers in JSON format that we would like to gain some insights on. Our Product Manager would like to know how the breakdown of `Members per State` from the given data, so that she can effectively target where to spend her development dollars.
+We have some raw data about our customers in JSON format that we would like to gain some insights on. Our Product Manager would like to know how the breakdown of `Users per State` from the given data, so that she can effectively target where to spend her development dollars to target the most customers via location.
 
-## Data format
+Breakdown by state is calculated by counting how many users live in each state. Use the `address` field of the user to find out where they live:
+
+`Unit 57\n 3 Rachel Broadway\nKimberlytown, SA, 2674`
+
+Since the product team have asked for this data, the output must be able to work in their existing toolset - Excel. A simple [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file output will be sufficient. See below examples of output in the section below.
+
+## Input Data format
 
 We have managed to extract data from our legacy database and transform it into a simple [JSON](https://en.wikipedia.org/wiki/JSON) file that looks like this:
 
@@ -42,19 +48,7 @@ We have managed to extract data from our legacy database and transform it into a
 ]
 ```
 
-### Data generation
-
-[Faker](https://faker.readthedocs.io/en/master/) was used to generate the sample data, you can see the python code under `/scripts/generator/py`. I am not a python developer, but it is a great generator. I guess it can be good for some things.
-
-You can run it yourself if you have python installed - I didn't get around to dockerising it so you're on your own with your dependencies and all that.
-
-You can run it via:
-
-```bash
-$ python generator.py
-```
-
-## The output
+## Output Data Format
 
 Since the product team have asked for this data, the output must be able to work in their existing toolset - Excel. A simple [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file output will be sufficient.
 
@@ -65,7 +59,7 @@ SA, 2
 QLD, 1
 ```
 
-## The ask
+## The Task
 
 ### Choose a language
 
@@ -73,13 +67,25 @@ We will accept your work in any language you choose. We realise that this is a g
 
 **Partly working code is more than acceptable** - we even give you the opportunity to provide us with a solution written entirely in [Pseudocode](https://en.wikipedia.org/wiki/Pseudocode), remember we are more interested in seeing how you think to solve problems than seeing the most elegant code out there :)
 
-### Use Git
+### Test Data
 
-Fork this repo into your own [GitHub](https://github.com/) account, if you do not already have one we recommend you sign up as it is a great resource to find resources that will help you on your journey regardless!
+You will find a `members-sample.json` file under the `/data` directory for you to play with. This correlates to the above example with three users and will make it much easier for you to test with.
+
+There is also a zip file containing a dataset of ~15000 users for you to test your code on to see how it performs with a larger data set.
+
+### Submitting your solution
+
+You may simply email us back your solution, or use Github to share your solution with us. **You will not gain any more or less points depending on which submission method you choose.**
+
+#### Option 1 - Email
+
+Email us back with a zip file containing your solution. Please be sure to include any notes as to your thinking, and instructions as to how to run the code.
+
+#### Option 2 - GIT
+
+Fork [this repo](https://github.com/deanbaker/graduate_coding) into your own [GitHub](https://github.com/) account, if you do not already have one we recommend you sign up as it is a great resource to find resources that will help you on your journey regardless!
 
 Once you have forked the repo, start writing your code in the `solution` directory found there.
-
-You will find a `members-sample.json` file under the `/data` directory for you to play with. There is also a zip file containing a dataset of ~15000 members for you to test your code on.
 
 ## Hints and tips
 
@@ -102,6 +108,20 @@ KISS is one of the oldest and most effective principles of software engineering.
 ### Reach out
 
 Below you have the email address of Dean Baker, he will be as responsive as possible and will probably federate out to other members of his team. Don't be surprised if you get someone else replying to your query :)
+
+### Data generation
+
+You don't have to worry about this, but in case you were interested in how we generated our user data here are some details.
+
+[Faker](https://faker.readthedocs.io/en/master/) was used to generate the sample data, you can see the python code under `/scripts/generator/py`.
+
+You can run it yourself if you have python installed - I didn't get around to dockerising it so you're on your own with your dependencies and all that.
+
+You can run it via:
+
+```bash
+$ python generator.py
+```
 
 ## Contact us
 

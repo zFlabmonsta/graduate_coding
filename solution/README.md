@@ -311,6 +311,7 @@ You can checkout these endpoints by entering the following url into the browser 
 - http://127.0.0.1:5000/api/csv/
 - http://127.0.0.1:5000/api/file/
 
+![Client interacting with server](clientserveraction.png)
 
 ## References
 If you found cool things on the internet that helped you (yes, this is not a closed book test) then throw them here for our reference!

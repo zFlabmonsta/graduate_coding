@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Count Users per State</title>
+  <meta name="description" content="Counted Users by State">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <button id='counts' data-on='false'>Display Counted Users</button>
+  <a href='http://127.0.0.1:5000/api/file/'><button id='download'>Download CSV file</button></a>
+
+  <script>
+      $(document).ready(function(){
+        $('#counts').click(function(){
+            if ($('#counts').attr("data-on") == 'false'){
+                $("body").append("<h1> WAIT FOR IT </h1>")
+                $.getJSON('http://127.0.0.1:5000/api/csv/', function(data) {
+                    var table = $("<table></table")
+                    for (var key in data) {
+                        table.append("<tr>")
+                        table.append("<th>" + key + "</th>")
+                        table.append("<th>" + data[key] + "</th>")
+                        table.append("</tr>")
+                    }
+                    $("body").append(table)
+                    $('#counts').attr({'data-on': 'true'})
+                    $('h1').remove()
+                });
+            } else {
+                $('table').remove()
+                $('#counts').attr({'data-on': 'false'})
+                console.log("HERE")
+            }
+        });
+      });
+  </script>
+</body>
+</html>
